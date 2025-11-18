@@ -50,7 +50,7 @@ class Monster {
 }
 
 /* ===========================
-   MAIN MENU - 4 ITEMS
+   MAIN MENU 
    =========================== */
 class MainMenu extends StatefulWidget {
   const MainMenu({super.key});
@@ -120,7 +120,7 @@ class _MainMenuState extends State<MainMenu> {
 }
 
 /* ===========================
-   HOME PAGE - BANNER PAS + SUPER JELAS
+   HOME PAGE - BANNER PAS
    =========================== */
 class MonsterHomePage extends StatefulWidget {
   final VoidCallback onFavoritesChanged;
@@ -168,16 +168,15 @@ class _MonsterHomePageState extends State<MonsterHomePage> {
       children: [
         Container(color: const Color(0xff0d0d0f)),
 
-        // === BANNER PAS + SUPER JELAS ===
+        // === BANNER
         Positioned(
-          top: MediaQuery.of(context).padding.top + 16, // Mulai dari atas + 16px
+          top: MediaQuery.of(context).padding.top + 16, 
           left: 16,
           right: 16,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(24),
             child: Stack(
               children: [
-                // FOTO BANNER
                 Image.asset(
                   "assets/images/banner.jpg",
                   width: double.infinity,
@@ -194,9 +193,8 @@ class _MonsterHomePageState extends State<MonsterHomePage> {
                     );
                   },
                 ),
-                // GLASS + BLUR SANGAT HALUS
                 BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4), // Super jelas!
+                  filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
                   child: Container(
                     height: 180,
                     decoration: BoxDecoration(
@@ -245,10 +243,10 @@ class _MonsterHomePageState extends State<MonsterHomePage> {
           ),
         ),
 
-        // MAIN CONTENT - MULAI TEPAT DI BAWAH BANNER
+        // MAIN CONTENT
         Padding(
           padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + 16 + 180 + 16, // 16 (top) + 180 (banner) + 16 (gap)
+            top: MediaQuery.of(context).padding.top + 16 + 180 + 16,
           ),
           child: Column(
             children: [
@@ -365,7 +363,7 @@ class _MonsterHomePageState extends State<MonsterHomePage> {
     );
   }
 
-  // === CARD & POPUP (TETAP SAMA) ===
+  // === CARD & POPUP ===
   Widget glassGlowCard(Monster m) {
     final bool isFav = FavoriteManager.favorites.contains(m);
 
@@ -592,7 +590,7 @@ class _FavoritePageState extends State<FavoritePage> {
 }
 
 /* ===========================
-   NOTIFICATION PAGE (NEW)
+   NOTIFICATION PAGE
    =========================== */
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
