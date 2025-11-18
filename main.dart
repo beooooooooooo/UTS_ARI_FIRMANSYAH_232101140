@@ -120,7 +120,7 @@ class _MainMenuState extends State<MainMenu> {
 }
 
 /* ===========================
-   HOME PAGE - BANNER PAS
+   HOME PAGE 
    =========================== */
 class MonsterHomePage extends StatefulWidget {
   final VoidCallback onFavoritesChanged;
